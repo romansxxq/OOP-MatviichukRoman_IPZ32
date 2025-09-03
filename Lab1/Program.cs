@@ -1,15 +1,22 @@
 ﻿public class Figure
 {
 
-    public double Area { get; private set; }
+    // public double Area { get; private set; }
+    private double _area;
 
+    public double Area
+    {
+        get { return _area; }
+        private set { _area = value; }
+    }
     public Figure(double area)
     {
         Area = area;
+        // Console.WriteLine("Constructor called");
     }
     ~Figure()
     {
-        Console.WriteLine("Destructor called");
+        // Console.WriteLine("Destructor called");
     }
     public void GetFigure()
     {
