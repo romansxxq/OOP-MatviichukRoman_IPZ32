@@ -4,8 +4,8 @@
     {
         List<Product> products = new List<Product>
         {
-            new Book("C# Basics", 300, "John Smith", "TechBooks"),
-            new Book("Algorithms", 450, "Robert Martin", "CodePress"),
+            new Book("C# Basics", 300, "John Smith", "TechBooks", 2021),
+            new Book("Algorithms", 450, "Robert Martin", "CodePress", 2018),
             new Food("Apple", 25, DateTime.Now.AddDays(7)),
             new Food("Milk", 35, DateTime.Now.AddDays(3))
         };

@@ -4,10 +4,11 @@ public class Book : Product
     public string Publisher { get; set; }
     public int Year { get; set; }
 
-    public Book(string name, float price, string author, string pubisher) : base(name, price)
+    public Book(string name, float price, string author, string pubisher, int year) : base(name, price)
     {
         Author = author;
         Publisher = pubisher;
+        Year = year;
     }
     public override string DisplayInfo()
     {
