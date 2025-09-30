@@ -22,7 +22,7 @@
         Console.WriteLine($"Average price of books: {avgPriceBook} UAH");
 
         var avgPriceFood = products.OfType<Food>().Average(f => f.Price);
-        Console.WriteLine($"Average price of food: {avgPriceBook} UAH");
+        Console.WriteLine($"Average price of food: {avgPriceFood} UAH");
 
         
     }
