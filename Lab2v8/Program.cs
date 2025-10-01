@@ -102,7 +102,8 @@
     }
 }
 class Program {
-    static void Main(string[] args) {
+    static void Main(string[] args)
+    {
         RationalNumber r1 = new RationalNumber(1, 2);
         RationalNumber r2 = new RationalNumber(3, 4);
 
