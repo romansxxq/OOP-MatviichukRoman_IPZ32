@@ -22,10 +22,11 @@
         //Виведення середньої вартості книг
         var avgPriceBook = products.OfType<Book>().Average(b => b.Price);
         Console.WriteLine($"Average price of books: {avgPriceBook} UAH");
-        //Виведення середньої вартості продуктів харчування та книг
+        //Виведення середньої вартості продуктів харчування
         var avgPriceFood = products.OfType<Food>().Average(f => f.Price);
         Console.WriteLine($"Average price of book: {avgPriceBook} UAH");
         Console.WriteLine($"Average price of food: {avgPriceFood} UAH");
+
         
     }
 }

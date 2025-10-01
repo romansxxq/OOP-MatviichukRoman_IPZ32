@@ -15,7 +15,7 @@ public class Book : Product
     //Деструктор класу Book
     ~Book()
     {
-        //Console.WriteLine($"Book {Name} is being destroyed");
+        Console.WriteLine($"Book {Name} is being destroyed");
     }
     //Перевизначений метод DisplayInfo для виведення інформації про книгу
     public override string DisplayInfo()

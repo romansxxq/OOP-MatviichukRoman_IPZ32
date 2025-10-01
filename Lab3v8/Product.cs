@@ -9,6 +9,11 @@ public class Product
         Name = name;
         Price = price;
     }
+    //Деструктор класу Product
+    ~Product()
+    {
+        Console.WriteLine($"Product {Name} is being destroyed");
+    }
     //Віртуальний метод DisplayInfo для виведення інформації про продукт
     public virtual string DisplayInfo()
     {
