@@ -35,7 +35,7 @@
         numbers.RemoveAll(n => removeUnwantedPredicate(n));
         Console.WriteLine("After removing unwanted (>20):");
         printListAction(numbers);
-        //Використання LINQ Aggregate (бонус із критеріїв) – добуток всіх чисел
+        //Використання LINQ Aggregate – добуток всіх чисел
         int multiplyAll = numbers.Aggregate(1, (acc, n) => acc * n);
         Console.WriteLine($"Multiply all remaining numbers = {multiplyAll}");
         Console.WriteLine("Done!");
