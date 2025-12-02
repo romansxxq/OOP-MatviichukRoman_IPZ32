@@ -16,7 +16,7 @@
   - 10 000 000
 - Фільтрація: x > 500 000
 - Функція HeavyMathOperation:
-      sqrt → sin → cos → log
+      sqrt -> sin -> cos -> log
 - Порівнював: LINQ vs PLINQ (AsParallel)
 - Час вимірював через Stopwatch.
 
@@ -36,6 +36,7 @@
 ---
 НЕПРАВИЛЬНО:
 ![screen](images/image.png)
+---
 Результат: 
 ![screen](images/4.png)
 ---
@@ -46,6 +47,7 @@
 ![screen](images/5.png)
 ---
 Результат:
+---
 ![alt text](image.png)
 ---
 - Interlocked гарантує атомарність.
