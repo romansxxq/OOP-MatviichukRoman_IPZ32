@@ -80,7 +80,7 @@ class ReadOnlyAccount : Account
 ### Перепроєктування
 - розділити інтерфейси: `IReadableAccount`, `IWithdrawableAccount`
 використовувати лише потрібний контракт.
-## Приклад №4
+## Приклад №3
 ### Опис проблеми
 Базовий клас `Document` має метод `Save()`.
 `ReadOnlyDocument` перевизначає його та кидає виняток.
