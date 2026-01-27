@@ -69,6 +69,6 @@ class Program
 Код можна глянути [тут](Program.cs)
 
 #### UML-діаграма:
-![UML-diagram](image/diagram%20uml.png)
+![UML-diagram](image/UML-diagram.png)
 ### Висновок:
 У результаті рефакторингу було усунуто антипатерн God Object, забезпечено дотримання принципу SRP, а також застосовано Dependency Injection, що підвищило гнучкість, зрозумілість та підтримуваність коду.
