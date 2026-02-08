@@ -1,4 +1,4 @@
-﻿//Bad DIP
+﻿//Bad ISP + DIP
 
 // class Program
 // {
@@ -85,20 +85,20 @@ class Program
 {
     static void Main(string[] args)
     {
-        var payrollSystem = new PayrollSystem(
-            new SalaryCalculator(),
-            new PdfExporter(),
-            new SqlDatabase()
-        );
+        ISalaryCalculator salaryCalculator = new SalaryCalculator();
+        IPdfExporter pdfExporter = new PdfExporter();
+        IDatabaseSaver databaseSaver = new SqlDatabase();
+
+        var payrollSystem = new PayrollSystem(salaryCalculator, pdfExporter, databaseSaver);
         payrollSystem.GeneratePayroll("EMP001");
 
     }
 }
 class PayrollSystem
 {
-    private readonly ISalaryCalculator _salaryCalculator = new SalaryCalculator();
-    private readonly IPdfExporter _pdfExporter = new PdfExporter();
-    private readonly IDatabaseSaver _databaseSaver = new SqlDatabase();
+    private readonly ISalaryCalculator _salaryCalculator;
+    private readonly IPdfExporter _pdfExporter;
+    private readonly IDatabaseSaver _databaseSaver;
 
     public PayrollSystem(
         ISalaryCalculator salaryCalculator,
@@ -113,7 +113,7 @@ class PayrollSystem
     public void GeneratePayroll(string employeeId)
     {
         var salary = _salaryCalculator.CalculateSalary(employeeId);
-        string report = $"Employee ID: {employeeId}, Salary: {salary}";
+        // string report = $"Employee ID: {employeeId}, Salary: {salary}";
         _pdfExporter.ExportToPdf(employeeId, salary);
         _databaseSaver.SaveToDatabase(employeeId, salary);
     }
@@ -143,7 +143,7 @@ class PdfExporter : IPdfExporter
     {
         Console.WriteLine($"Wait...Exporting {employeeId} with salary {salary} to PDF.");
         Thread.Sleep(2000);
-        Console.WriteLine($"Exporting {employeeId} with salary {salary} to PDF.");
+        Console.WriteLine($"Exported {employeeId} with salary {salary} to PDF.\n");
     }
 }
 class SqlDatabase : IDatabaseSaver
@@ -152,6 +152,6 @@ class SqlDatabase : IDatabaseSaver
     {
         Console.WriteLine($"Wait...Saving {employeeId} with salary {salary} to database.");
         Thread.Sleep(2000);
-        Console.WriteLine($"Saving {employeeId} with salary {salary} to database.");
+        Console.WriteLine($"Saved {employeeId} with salary {salary} to database.\n");
     }
 }
