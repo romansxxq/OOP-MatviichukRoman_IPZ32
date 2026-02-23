@@ -15,7 +15,6 @@ class Program
         var historyObs = new HistoryLoggerObserver();
         var thresholdObs = new ThresholdNotifierObserver(20);
 
-        // ВАЖЛИВО: без дужок! (інакше CS1503)
         publisher.ResultCalculated += consoleObs.OnResult;
         publisher.ResultCalculated += historyObs.OnResult;
         publisher.ResultCalculated += thresholdObs.OnResult;
