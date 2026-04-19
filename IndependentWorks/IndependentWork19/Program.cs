@@ -36,16 +36,14 @@ public class JpgToPngConverter  : IFileConverter
 {
     public void Convert(string fileName)
     {
-            // Simulate file conversion
-            Console.WriteLine($"[JpgToPngConverter] Converting {fileName} from JPG to PNG...");
+        Console.WriteLine($"[JpgToPngConverter] Converting {fileName} from JPG to PNG...");
     }
 }
 public class CsvToJsonConverter  : IFileConverter
 {
     public void Convert(string fileName)
     {
-            // Simulate file conversion
-            Console.WriteLine($"[CsvToJsonConverter] Converting {fileName} from CSV to JSON...");
+        Console.WriteLine($"[CsvToJsonConverter] Converting {fileName} from CSV to JSON...");
     }
 }
 
